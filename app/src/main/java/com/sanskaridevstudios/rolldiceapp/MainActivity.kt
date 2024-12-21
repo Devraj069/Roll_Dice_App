@@ -2,11 +2,13 @@ package com.sanskaridevstudios.rolldiceapp
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.util.Random
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +23,17 @@ class MainActivity : AppCompatActivity() {
         val rollDice:Button = findViewById(R.id.roll_dice)
         //Setting up on click listener
         rollDice.setOnClickListener {
-            Toast.makeText(this,"Button Clicked",Toast.LENGTH_SHORT).show()
+//            Toast.makeText(this,"Button Clicked",Toast.LENGTH_SHORT).show()
+            rolledDice()
         }
+    }
+
+    private fun rolledDice() {
+        val resultText : TextView = findViewById(R.id.resultText)
+
+        //Getting a Random value
+        var randomNum : Int = Random().nextInt(6) + 1
+        resultText.text = randomNum.toString()
+
     }
 }
