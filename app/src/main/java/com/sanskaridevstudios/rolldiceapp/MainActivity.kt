@@ -13,6 +13,7 @@ import androidx.core.view.WindowInsetsCompat
 import java.util.Random
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var diceImage: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         val rollDice:Button = findViewById(R.id.roll_dice)
+        diceImage = findViewById(R.id.dice_image)
         //Setting up on click listener
         rollDice.setOnClickListener {
 //            Toast.makeText(this,"Button Clicked",Toast.LENGTH_SHORT).show()
@@ -31,12 +33,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun rolledDice() {
-        val diceImage : ImageView = findViewById(R.id.dice_image)
+
 
         //Getting a Random value
         var randomNum : Int = Random().nextInt(6) + 1
         //Combine image with random value and it return image
-        var drawableResource = when(randomNum){
+        val drawableResource = when(randomNum){
             1->R.drawable.dice_1
             2->R.drawable.dice_2
             3->R.drawable.dice_3
