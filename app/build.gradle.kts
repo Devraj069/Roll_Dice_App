@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.sanskaridevstudios.rolldiceapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.sanskaridevstudios.rolldiceapp"
