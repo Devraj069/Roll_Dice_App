@@ -2,6 +2,7 @@ package com.sanskaridevstudios.rolldiceapp
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         val rollDice:Button = findViewById(R.id.roll_dice)
-        rollDice.text = "Lets Roll"
+        //Setting up on click listener
+        rollDice.setOnClickListener {
+            Toast.makeText(this,"Button Clicked",Toast.LENGTH_SHORT).show()
+        }
     }
 }
